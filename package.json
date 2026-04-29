@@ -1,0 +1,25 @@
+{
+  "name": "generative-ai-engineering-lab",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A hands-on Generative AI engineering lab: RAG, prompt evals, safety, agents, and production patterns from scratch.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "demo": "node dist/src/cli.js all",
+    "demo:rag": "node dist/src/cli.js rag",
+    "demo:evals": "node dist/src/cli.js evals",
+    "demo:safety": "node dist/src/cli.js safety",
+    "demo:agent": "node dist/src/cli.js agent",
+    "test": "npm run build && node dist/tests/smoke.test.js",
+    "check": "npm run build && npm run demo && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,15 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="360" fill="#080B16"/>
+  <path d="M0 260C160 190 300 300 456 230C640 148 760 92 950 135C1060 160 1130 125 1200 88V360H0V260Z" fill="#6D5EFc" opacity="0.3"/>
+  <path d="M0 306C170 250 275 335 435 283C596 230 720 180 900 225C1045 262 1128 210 1200 178V360H0V306Z" fill="#00C2A8" opacity="0.25"/>
+  <rect x="68" y="66" width="1064" height="228" rx="28" fill="#11182F" stroke="#2E3A64"/>
+  <text x="108" y="140" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="48" font-weight="800">Generative AI Engineering Lab</text>
+  <text x="110" y="188" fill="#B7C3E6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24">Learn by building RAG, evals, agents, safety, and production AI systems.</text>
+  <text x="110" y="239" fill="#E8EEFF" font-family="Consolas, monospace" font-size="21">npm run demo  ->  retrieval • evaluation • safety • agent planning</text>
+  <g transform="translate(884 96)">
+    <rect width="200" height="136" rx="18" fill="#080B16" stroke="#3D4B7C"/>
+    <text x="22" y="42" fill="#00C2A8" font-family="Consolas, monospace" font-size="17">RAG passed</text>
+    <text x="22" y="78" fill="#FFD166" font-family="Consolas, monospace" font-size="17">Evals passed</text>
+    <text x="22" y="114" fill="#FFFFFF" font-family="Consolas, monospace" font-size="17">Agent ready</text>
+  </g>
+</svg>

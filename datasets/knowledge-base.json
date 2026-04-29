@@ -1,0 +1,14 @@
+[
+  {
+    "id": "rag-001",
+    "title": "RAG Basics",
+    "text": "Retrieval augmented generation retrieves relevant source chunks before drafting an answer. Strong RAG systems cite sources and admit uncertainty.",
+    "tags": ["rag", "retrieval", "citations"]
+  },
+  {
+    "id": "eval-001",
+    "title": "Prompt Evaluation",
+    "text": "Prompt evaluation checks AI outputs against expected behavior, forbidden claims, safety requirements, and task-specific quality criteria.",
+    "tags": ["evals", "quality", "testing"]
+  }
+]
