@@ -45,6 +45,14 @@ npm run demo:safety
 npm run demo:agent
 ```
 
+Run the website:
+
+```bash
+npm run site
+```
+
+Then open `http://localhost:4173`.
+
 ## What You Build
 
 | Module | What It Teaches | Working Code |
@@ -69,6 +77,7 @@ agent: five-step workflow generated
 
 ```text
 src/                      TypeScript implementation
+site/                     Static website
 tests/                    Smoke tests
 curriculum/               Learning path
 prompts/                  Reusable prompt templates

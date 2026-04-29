@@ -8,6 +8,7 @@
 - Agent planner.
 - Curriculum skeleton.
 - CI and tests.
+- Static website.
 
 ## 0.2
 

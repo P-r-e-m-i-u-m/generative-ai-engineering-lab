@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A hands-on Generative AI engineering lab for RAG, prompt evals, safety scanners, agents, and production AI systems."
+    />
+    <meta name="theme-color" content="#080b16" />
+    <title>Generative AI Engineering Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="field" aria-hidden="true"></canvas>
+
+    <header class="topbar" data-elevated="false">
+      <a class="brand" href="#home" aria-label="Generative AI Engineering Lab home">
+        <span class="brand-mark">G</span>
+        <span class="brand-copy">
+          <strong>GenAI Lab</strong>
+          <span>RAG. Evals. Agents.</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#systems">Systems</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#demo">Demo</a>
+        <a href="#contribute">Contribute</a>
+      </nav>
+      <a class="github-link" href="https://github.com/P-r-e-m-i-u-m/generative-ai-engineering-lab">GitHub</a>
+    </header>
+
+    <main id="home">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">Open-source Generative AI engineering</p>
+          <h1>Build the systems behind real AI products.</h1>
+          <p class="hero-text">
+            A practical lab for retrieval, evals, safety, agents, and production habits.
+            Clone it, run it, improve it.
+          </p>
+          <div class="hero-actions" aria-label="Hero actions">
+            <a class="button primary" href="https://github.com/P-r-e-m-i-u-m/generative-ai-engineering-lab">View Repo</a>
+            <a class="button secondary" href="#demo">See Demo</a>
+          </div>
+          <dl class="stats" aria-label="Project stats">
+            <div>
+              <dt>4</dt>
+              <dd>core systems</dd>
+            </div>
+            <div>
+              <dt>6</dt>
+              <dd>learning phases</dd>
+            </div>
+            <div>
+              <dt>0</dt>
+              <dd>runtime APIs needed</dd>
+            </div>
+          </dl>
+        </div>
+
+        <aside class="terminal" aria-label="Demo terminal preview">
+          <div class="terminal-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <pre><code>$ npm run check
+build passed
+demo generated
+tests passed
+
+RAG: cited answer
+Evals: prompt passed
+Safety: risk detected
+Agent: plan ready</code></pre>
+        </aside>
+      </section>
+
+      <section id="systems" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">What you build</p>
+          <h2>Four AI engineering systems in one repo.</h2>
+          <p>Each module is small enough to understand and useful enough to extend into a real product.</p>
+        </div>
+        <div class="systems-grid">
+          <article class="system-card">
+            <span class="system-index">01</span>
+            <h3>RAG Pipeline</h3>
+            <p>Retrieve trusted context, rank sources, draft grounded answers, and show citations with confidence.</p>
+          </article>
+          <article class="system-card">
+            <span class="system-index">02</span>
+            <h3>Prompt Evals</h3>
+            <p>Score model outputs against expected keywords, forbidden claims, and behavior checks.</p>
+          </article>
+          <article class="system-card">
+            <span class="system-index">03</span>
+            <h3>Safety Scanner</h3>
+            <p>Detect PII, financial, legal, medical, and self-harm risk before responses reach users.</p>
+          </article>
+          <article class="system-card">
+            <span class="system-index">04</span>
+            <h3>Agent Planner</h3>
+            <p>Turn goals into reviewable workflows with retrieval, drafting, evaluation, and human handoff.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="curriculum" class="section split">
+        <div>
+          <p class="eyebrow">Learning path</p>
+          <h2>A curriculum that ships artifacts.</h2>
+          <p>
+            This is not passive reading. Every phase ends with code, prompts, evals, datasets, or workflow specs that
+            contributors can improve.
+          </p>
+        </div>
+        <div class="timeline" aria-label="Curriculum phases">
+          <button class="phase active" data-phase="0">
+            <span>00</span>
+            Foundations
+          </button>
+          <button class="phase" data-phase="1">
+            <span>01</span>
+            Prompt engineering
+          </button>
+          <button class="phase" data-phase="2">
+            <span>02</span>
+            RAG systems
+          </button>
+          <button class="phase" data-phase="3">
+            <span>03</span>
+            Agent workflows
+          </button>
+          <button class="phase" data-phase="4">
+            <span>04</span>
+            Evals and safety
+          </button>
+          <button class="phase" data-phase="5">
+            <span>05</span>
+            Production
+          </button>
+        </div>
+        <article class="phase-detail" aria-live="polite">
+          <p class="eyebrow">Phase 00</p>
+          <h3>Foundations</h3>
+          <p>Understand the GenAI loop: user goal, prompt, context, output, evaluation, safety, and product action.</p>
+        </article>
+      </section>
+
+      <section id="demo" class="section demo-section">
+        <div class="section-heading">
+          <p class="eyebrow">Runnable proof</p>
+          <h2>One command shows the full lab.</h2>
+          <p>The repo runs without API keys, so anyone can clone it, test it, and contribute immediately.</p>
+        </div>
+        <div class="demo-shell">
+          <div class="demo-tabs" role="tablist" aria-label="Demo views">
+            <button class="demo-tab active" data-demo="check" role="tab" aria-selected="true">check</button>
+            <button class="demo-tab" data-demo="rag" role="tab" aria-selected="false">rag</button>
+            <button class="demo-tab" data-demo="agent" role="tab" aria-selected="false">agent</button>
+          </div>
+          <pre class="demo-output"><code>npm run check
+
+build passed
+demo generated
+Smoke tests passed.</code></pre>
+        </div>
+      </section>
+
+      <section id="contribute" class="section contribute">
+        <div>
+          <p class="eyebrow">Open source</p>
+          <h2>Built for people who want to learn by shipping.</h2>
+          <p>
+            Add an embeddings lesson, improve retrieval ranking, create eval cases, or build the first browser UI.
+            The repo has starter issues ready.
+          </p>
+        </div>
+        <div class="contribute-actions">
+          <a class="button primary" href="https://github.com/P-r-e-m-i-u-m/generative-ai-engineering-lab/issues">Open Issues</a>
+          <a class="button secondary" href="https://github.com/P-r-e-m-i-u-m/generative-ai-engineering-lab">Star on GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Generative AI Engineering Lab</span>
+      <span>MIT licensed. Built for practical AI builders.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
