@@ -245,7 +245,9 @@ function createExcerpt(text: string, terms: string[]): string {
     .map((term) => lower.indexOf(term))
     .filter((index) => index >= 0)
     .sort((a, b) => a - b)[0];
-  const start = Math.max(0, firstIndex - 70);
+  const sentenceStart = text.lastIndexOf(". ", firstIndex);
+  const rawStart = Math.max(0, firstIndex - 70);
+  const start = sentenceStart >= 0 ? sentenceStart + 2 : rawStart < 20 ? 0 : rawStart;
   const end = Math.min(text.length, firstIndex + 180);
   return text.slice(start, end).trim();
 }

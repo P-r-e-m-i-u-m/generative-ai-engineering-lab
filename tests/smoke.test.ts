@@ -5,6 +5,7 @@ const report = createSampleReport();
 
 assert.ok(report.rag.citations.length >= 1);
 assert.ok(report.rag.answer.includes("retrieved"));
+assert.ok(report.rag.citations[0]?.excerpt.startsWith("Retrieval augmented generation"));
 assert.equal(report.evals[0]?.passed, true);
 assert.equal(report.safety[0]?.riskLevel, "high");
 assert.ok(report.agent.steps.length >= 5);
