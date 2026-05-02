@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Project roadmap
+    url: https://github.com/P-r-e-m-i-u-m/generative-ai-engineering-lab/milestones
+    about: Check active milestones before suggesting large changes.

@@ -111,6 +111,8 @@ Every phase should produce an artifact: a prompt, eval, dataset, agent spec, or 
 - Add lesson quizzes.
 - Add hosted demo.
 
+Current release: [v0.1.0](https://github.com/P-r-e-m-i-u-m/generative-ai-engineering-lab/releases/tag/v0.1.0)
+
 ## Contributing
 
 Start with `docs/good-first-issues.md`.
