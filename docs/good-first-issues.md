@@ -9,6 +9,7 @@ Explain embeddings in `curriculum/02-rag/` and show how they improve retrieval.
 ## Add More Eval Cases
 
 Extend `evals/smoke-evals.json` with cases for RAG, safety, and agent planning.
+Current starter coverage includes RAG quality, financial safety boundaries, and agent planning quality.
 
 ## Add A Dataset
 
