@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { createEvalReport } from "../src/eval-report.js";
 import { createSampleReport } from "../src/lab.js";
 
 const report = createSampleReport();
@@ -21,5 +22,10 @@ assert.ok(evalCases.length >= 3);
 assert.ok(evalCases.some((testCase) => testCase.id === "safety-boundary-financial"));
 assert.ok(evalCases.every((testCase) => testCase.expectedKeywords.length > 0));
 assert.ok(evalCases.every((testCase) => testCase.forbiddenKeywords.length > 0));
+
+const evalReport = createEvalReport();
+assert.equal(evalReport.totalCases, evalCases.length);
+assert.equal(evalReport.failedCases, 0);
+assert.equal(evalReport.passRate, 1);
 
 console.log("Smoke tests passed.");

@@ -4,6 +4,7 @@
 
 - RAG demo.
 - Prompt eval demo.
+- Eval report output.
 - Safety scanner.
 - Agent planner.
 - Curriculum skeleton.

@@ -12,6 +12,7 @@
     "demo:evals": "node dist/src/cli.js evals",
     "demo:safety": "node dist/src/cli.js safety",
     "demo:agent": "node dist/src/cli.js agent",
+    "eval:report": "node dist/src/eval-report-cli.js",
     "site": "node scripts/serve-site.js",
     "test": "npm run build && node dist/tests/smoke.test.js",
     "check": "npm run build && npm run demo && npm test"

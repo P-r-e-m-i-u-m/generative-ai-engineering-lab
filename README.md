@@ -43,6 +43,7 @@ npm run demo:rag
 npm run demo:evals
 npm run demo:safety
 npm run demo:agent
+npm run eval:report
 ```
 
 Run the website:
