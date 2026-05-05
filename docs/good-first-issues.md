@@ -13,7 +13,7 @@ Current starter coverage includes RAG quality, financial safety boundaries, and 
 
 ## Improve Eval Report Output
 
-Extend `npm run eval:report` with JSON output, file export, or CI summary annotations.
+Extend `npm run eval:report` with file export, CI summary annotations, or trend history.
 
 ## Add A Dataset
 

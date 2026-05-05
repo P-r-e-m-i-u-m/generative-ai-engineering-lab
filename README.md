@@ -44,6 +44,7 @@ npm run demo:evals
 npm run demo:safety
 npm run demo:agent
 npm run eval:report
+npm run build && node dist/src/eval-report-cli.js --json
 ```
 
 Run the website:

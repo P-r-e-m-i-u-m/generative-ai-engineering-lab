@@ -5,6 +5,7 @@
 - RAG demo.
 - Prompt eval demo.
 - Eval report output.
+- JSON eval report output.
 - Safety scanner.
 - Agent planner.
 - Curriculum skeleton.

@@ -1,4 +1,6 @@
 import { createEvalReport, formatEvalReport } from "./eval-report.js";
 
-console.log(formatEvalReport(createEvalReport()));
+const report = createEvalReport();
+const format = process.argv.includes("--json") ? "json" : "text";
 
+console.log(format === "json" ? JSON.stringify(report, null, 2) : formatEvalReport(report));

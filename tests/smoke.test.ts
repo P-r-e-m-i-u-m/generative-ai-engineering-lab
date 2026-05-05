@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { createEvalReport } from "../src/eval-report.js";
 import { createSampleReport } from "../src/lab.js";
@@ -27,5 +28,11 @@ const evalReport = createEvalReport();
 assert.equal(evalReport.totalCases, evalCases.length);
 assert.equal(evalReport.failedCases, 0);
 assert.equal(evalReport.passRate, 1);
+
+const jsonReport = JSON.parse(
+  execFileSync("node", ["dist/src/eval-report-cli.js", "--json"], { encoding: "utf8" })
+) as { totalCases: number; failedCases: number };
+assert.equal(jsonReport.totalCases, evalCases.length);
+assert.equal(jsonReport.failedCases, 0);
 
 console.log("Smoke tests passed.");
