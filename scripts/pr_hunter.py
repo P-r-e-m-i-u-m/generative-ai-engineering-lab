@@ -31,11 +31,12 @@ HEADERS = {
     "X-GitHub-Api-Version": "2022-11-28",
 }
 
-MAX_DIFF_LINES = 30
+MAX_DIFF_LINES = 60
 LOG_FILE = "pr-log.md"
 WORKDIR = "/tmp/pr-hunter-work"
 
 REPO_POOL = [
+    # Big tech (kept, but low hit-rate -- issues get claimed fast)
     "microsoft/vscode",
     "microsoft/TypeScript",
     "microsoft/PowerToys",
@@ -51,6 +52,38 @@ REPO_POOL = [
     "vuejs/core",
     "sveltejs/svelte",
     "denoland/deno",
+    # Mid-size, active, less crowded -- much higher realistic hit-rate
+    "tiangolo/fastapi",
+    "encode/django-rest-framework",
+    "psf/black",
+    "pypa/pip",
+    "python-poetry/poetry",
+    "pydantic/pydantic",
+    "sqlalchemy/sqlalchemy",
+    "django/django",
+    "scrapy/scrapy",
+    "celery/celery",
+    "huggingface/transformers",
+    "huggingface/datasets",
+    "streamlit/streamlit",
+    "gradio-app/gradio",
+    "ollama/ollama",
+    "langchain-ai/langchain",
+    "prettier/prettier",
+    "eslint/eslint",
+    "webpack/webpack",
+    "vitejs/vite",
+    "axios/axios",
+    "lodash/lodash",
+    "chartjs/Chart.js",
+    "tailwindlabs/tailwindcss",
+    "strapi/strapi",
+    "nestjs/nest",
+    "prisma/prisma",
+    "supabase/supabase",
+    "directus/directus",
+    "n8n-io/n8n",
+    "gohugoio/hugo",
 ]
 
 
@@ -89,9 +122,27 @@ def gh_search_issues():
 
 
 def guess_file_path(issue):
+    """First try to spot an explicit filename in the issue text.
+    If that fails, fall back to GitHub code search using keywords
+    from the title -- catches far more real, fixable issues."""
     text = f"{issue['title']} {issue['body']}"
     match = re.search(r'[\w\-/]+\.(py|js|ts|tsx|jsx|md|json|go|rs)\b', text)
-    return match.group(0) if match else None
+    if match:
+        return match.group(0)
+
+    stopwords = {"the", "a", "an", "in", "on", "to", "of", "and", "is", "for",
+                 "fix", "bug", "issue", "error", "when", "with", "not", "add"}
+    keywords = [w for w in re.findall(r"[A-Za-z_]{4,}", issue["title"]) if w.lower() not in stopwords]
+    if not keywords:
+        return None
+
+    q = f'{" ".join(keywords[:3])} repo:{issue["repo"]}'
+    url = f"{GH_API}/search/code?q={requests.utils.quote(q)}&per_page=3"
+    r = requests.get(url, headers=HEADERS)
+    if r.status_code != 200:
+        return None
+    items = r.json().get("items", [])
+    return items[0]["path"] if items else None
 
 
 def fetch_file_content(repo, path):
