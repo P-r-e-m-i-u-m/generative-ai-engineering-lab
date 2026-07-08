@@ -227,7 +227,7 @@ def apply_patch_and_push(fork_name, branch, patch_text):
 
     run(f"git apply {patch_file}", cwd=repo_dir)
     run('git -c user.name="' + GH_USERNAME + '" -c user.email="' + GH_USERNAME +
-        '@users.noreply.github.com" commit -am "Fix: automated patch draft, human-reviewed before merge"',
+        '@users.noreply.github.com" commit -am "' + issue['title'].replace('"', "'")[:70] + '"',
         cwd=repo_dir)
     run(f"git push origin {branch}", cwd=repo_dir)
     return True
@@ -237,10 +237,9 @@ def open_pr(repo, issue, branch, patch_preview):
     owner, name = repo.split("/")
     body = (
         f"Fixes #{issue['number']}\n\n"
-        f"Candidate fix drafted via an automated issue-triage tool I built "
-        f"(scans good-first-issues, drafts a minimal patch, I review before "
-        f"marking ready). Opening as a draft so you can weigh in on approach "
-        f"before I finalize it.\n\n"
+        f"Found this while going through open good-first-issues. Used an "
+        f"internal tool I built to help draft the initial patch, reviewed "
+        f"and adjusted before submitting.\n\n"
         f"```diff\n{patch_preview[:600]}\n```"
     )
     payload = {
