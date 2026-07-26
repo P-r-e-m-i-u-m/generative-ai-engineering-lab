@@ -21,6 +21,7 @@ assert.equal(report.safety[0]?.riskLevel, "high");
 assert.ok(report.agent.steps.length >= 5);
 assert.ok(evalCases.length >= 3);
 assert.ok(evalCases.some((testCase) => testCase.id === "safety-boundary-financial"));
+assert.ok(evalCases.some((testCase) => testCase.id === "rag-missing-medical-source"));
 assert.ok(evalCases.every((testCase) => testCase.expectedKeywords.length > 0));
 assert.ok(evalCases.every((testCase) => testCase.forbiddenKeywords.length > 0));
 
@@ -28,6 +29,9 @@ const evalReport = createEvalReport();
 assert.equal(evalReport.totalCases, evalCases.length);
 assert.equal(evalReport.failedCases, 0);
 assert.equal(evalReport.passRate, 1);
+const medicalRagCase = evalReport.cases.find((testCase) => testCase.id === "rag-missing-medical-source");
+assert.equal(medicalRagCase?.passed, true);
+assert.deepEqual(medicalRagCase?.forbiddenHits, []);
 
 const jsonReport = JSON.parse(
   execFileSync("node", ["dist/src/eval-report-cli.js", "--json"], { encoding: "utf8" })
