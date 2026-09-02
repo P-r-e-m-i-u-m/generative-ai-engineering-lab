@@ -71,3 +71,4 @@
 | 2026-08-30 | - | [#-](-) | no candidate produced a working patch today | - |
 | 2026-08-31 | - | [#-](-) | no candidate produced a working patch today | - |
 | 2026-09-01 | - | [#-](-) | no candidate produced a working patch today | - |
+| 2026-09-02 | - | [#-](-) | no candidate produced a working patch today | - |
