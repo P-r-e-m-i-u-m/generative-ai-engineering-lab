@@ -119,3 +119,4 @@
 | 2026-10-18 | - | [#-](-) | no candidate produced a working patch today | - |
 | 2026-10-19 | - | [#-](-) | no candidate produced a working patch today | - |
 | 2026-10-20 | - | [#-](-) | no candidate produced a working patch today | - |
+| 2026-10-21 | - | [#-](-) | no candidate produced a working patch today | - |
