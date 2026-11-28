@@ -157,3 +157,4 @@
 | 2026-11-25 | - | [#-](-) | no candidate produced a working patch today | - |
 | 2026-11-26 | - | [#-](-) | no candidate produced a working patch today | - |
 | 2026-11-27 | - | [#-](-) | no candidate produced a working patch today | - |
+| 2026-11-28 | - | [#-](-) | no candidate produced a working patch today | - |
